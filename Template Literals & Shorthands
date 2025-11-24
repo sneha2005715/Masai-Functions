@@ -1,0 +1,29 @@
+a) Create a variable username and course and print: "Hello , welcome to the course!" using template literals. 
+
+ans) Template literals
+const username = "Snehanjali";
+const course = "JavaScript";
+
+console.log(`Hello ${username}, welcome to the ${course} course!`);
+
+b) Convert the below object into shorthand syntax: 
+const name = "Sam"; 
+const age = 21; 
+const student = { name: name, age: age, greet: function (){
+console.log("Hello"); } };
+
+ans)const name = "Sam";
+const age = 21;
+const student = {
+  name: name,
+  age: age,
+  greet: function () {
+    console.log("Hello");
+  }
+};
+
+c) Create a function getFullName(first, last) using arrow function shorthand (no return keyword).
+
+ans)const getFullName = (first, last) => `${first} ${last}`;
+
+
