@@ -1,0 +1,30 @@
+a) Use spread operator to merge: 
+arr1 = [1, 2, 3]; 
+arr2 = [4, 5]; 
+
+ans) const arr1 = [1, 2, 3];
+const arr2 = [4, 5];
+
+const merged = [...arr1, ...arr2]; // [1, 2, 3, 4, 5]
+
+
+b) Create a function sum(...nums) using rest operator that returns the sum of all numbers.
+ans)const sum = (...nums) => nums.reduce((acc, curr) => acc + curr, 0);
+Example:-
+sum(1, 2, 3, 4); // 10
+
+
+c) Given:
+const user = {
+  name: "Alice",
+  age: 22,
+  address: {
+    city: "Bangalore",
+    pin: 560001
+  }
+};
+
+ans)const {
+  name,
+  address: { city, pin }
+} = user;
