@@ -1,0 +1,9 @@
+const calculate = n => ({ square: n * n, cube: n * n * n });
+
+How it works:
+No {} after the arrow → implicit return.
+The object is wrapped in () so JavaScript treats it as a value, not a block.
+Returns both values inside an object.
+
+console.log(calculate(5));
+// Output: { square: 25, cube: 125 }
