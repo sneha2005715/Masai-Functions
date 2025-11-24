@@ -1,0 +1,215 @@
+1. Template Literals + Expressions
+a) Print: "5 + 7 = 12" using a template literal where the result is calculated inside ${ }.
+
+b) Create a multi-line string using template literals (3 lines).
+
+c) Given firstName = "John" and lastName = "Doe", print the full name using a template literal.
+
+ans)a) console.log(`5 + 7 = ${5 + 7}`);
+b)const message = `
+Line 1
+Line 2
+Line 3
+`;
+c)const firstName = "John";
+const lastName = "Doe";
+console.log(`${firstName} ${lastName}`);
+
+
+2. Arrow Functions & this
+a) Convert this function into an arrow function:
+
+function square(n) {
+  return n * n;
+}
+b) Explain why the following logs undefined:
+
+const obj = {
+  value: 50,
+  test: () => console.log(this.value)
+};
+obj.test();
+c) Rewrite it using a normal function so that printing works
+
+ans)a)const square = n => n * n;
+b) Why logs undefined?
+Arrow functions do not have their own this.
+They use lexical this (from outside), which in this case is the global scope → this.value is undefined.
+c)const obj = {
+  value: 50,
+  test() {
+    console.log(this.value);
+  }
+};
+obj.test();
+
+
+3. Rest, Spread & Copying Objects
+a) Use spread to make a shallow copy of this object:
+
+const product = { name: "Pen", price: 10 };
+b) Merge these two objects using spread:
+
+const a = { x: 1 };
+const b = { y: 2 };
+c) Write a function maxValue(...nums) (rest operator) that returns the largest number.
+
+ans)a)const copy = { ...product };
+b)const merged = { ...a, ...b };
+c)const maxValue = (...nums) => Math.max(...nums);
+
+
+4. Destructuring & Optional Chaining
+a) Destructure to extract a and b:
+
+const arr = [10, 20, 30];
+b) Destructure the object to extract brand:
+
+const laptop = { brand: "Dell", ram: "8GB" };
+c) Safely access the following using optional chaining:
+
+const info = {};
+Expected output: undefined (not an error)
+
+
+ans)a)const [a, b] = arr;
+b)const { brand } = laptop;
+c)console.log(info?.user?.name); // undefined
+
+
+5. Scoping (let/var/const)
+a) What will this print?
+
+for (var i = 0; i < 3; i++) {}
+console.log(i);
+b) What will this print?
+
+for (let j = 0; j < 3; j++) {}
+console.log(j);
+c) Why is const used for values that should not be reassigned?
+
+
+
+ans)a)for (var i = 0; i < 3; i++) {}
+console.log(i); // 3  (var is function-scoped)
+b)for (let j = 0; j < 3; j++) {}
+console.log(j); // ReferenceError (let is block-scoped)
+c) Why const?
+Because variables declared with const cannot be reassigned, ensuring values remain unchanged—it prevents accidental modification.
+
+
+6. Ternary Operator – Practice
+a) Convert this to a ternary:
+
+let speed;
+if (kmph > 60) {
+  speed = "Fast";
+} else {
+  speed = "Normal";
+}
+b) Write a ternary that prints "Adult" if age ≥ 18, else "Minor".
+
+c) Write a ternary to check: Positive → "Positive" Zero → "Zero" Negative → "Negative" (Hint: use nested ternary)
+
+
+ans)a)const speed = kmph > 60 ? "Fast" : "Normal";
+b)const result = age >= 18 ? "Adult" : "Minor";
+c)const output = n > 0 ? "Positive" : n === 0 ? "Zero" : "Negative";
+
+
+7. Spread, Rest & Arrays
+a) Add elements 4, 5 to this array using spread:
+
+const nums = [1,2,3];
+b) Combine these arrays using spread:
+
+a = ["x","y"];
+b = ["z"];
+c) Write a function using rest: printNames("A","B","C") → returns ["A","B","C"]
+
+
+ans)a)const nums2 = [...nums, 4, 5];
+b)const combined = [...a, ...b];
+c)const printNames = (...names) => names;
+
+
+8. Object Destructuring & Shorthand
+a) Destructure the following:
+
+const user = { id: 101, status: "active" };
+b) Convert this to shorthand:
+
+const id = 101;
+const role = "admin";
+const user = {
+  id: id,
+  role: role
+};
+c) Create an object using shorthand and add a method using shorthand syntax.
+
+
+ans)a)const { id, status } = user;
+b)const user2 = { id, role };
+c)const person = {
+  name: "Sam",
+  greet() {
+    console.log("Hello");
+  }
+};
+
+
+9. Template Literals (More Practice)
+a) Use a template literal to print today’s date using: new Date().toDateString() 
+b) Create a template literal that prints: "Hello NAME, your score is SCORE/100"
+
+
+ans)a)console.log(`Today's date is ${new Date().toDateString()}`);
+b)const name = "Alex";
+const score = 85;
+console.log(`Hello ${name}, your score is ${score}/100`);
+
+
+10. Arrow Function Shorthands
+a) Convert a normal function to a one-line arrow function for addition.
+b) Write an arrow function isAdult(age) that returns true/false.
+c) Create an arrow function double that doubles a number.
+
+ans)a)const add = (a, b) => a + b;
+b)const isAdult = age => age >= 18;
+c)const double = n => n * n;
+
+
+11. Spread Operator (Arrays & Objects)
+a) Clone an array using spread.
+b) Add element 100 to the beginning of an array using spread.
+c) Merge two objects and override one property using spread.
+
+
+ans)a)const clone = [...array];
+b)const updated = [100, ...array];
+c)const mergedObj = { ...obj1, ...obj2, key: "newValue" };
+
+
+
+12. Optional Chaining (More Practice)
+a) Access user.address.city safely:
+
+const user = {
+  name: "Alex",
+  address: {
+    city: "Bangalore"
+  }
+};
+b) Access user.job.title safely (should print undefined).
+
+c) Write an example where optional chaining prevents a runtime error.
+
+
+ans)a)console.log(user.address?.city);
+b)console.log(user.job?.title); // undefined
+c)const order = {
+  customer: null
+};
+
+console.log(order.customer?.address?.city); 
+// undefined (no error)
