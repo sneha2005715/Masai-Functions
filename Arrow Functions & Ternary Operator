@@ -1,0 +1,23 @@
+a) Write an arrow function isEven(n) that returns true if even, else false.
+
+ans) const isEven = n => n % 2 === 0;
+
+b) Rewrite the following using a ternary operator: 
+if (marks >= 35) { result = "Pass"; 
+} else { result = "Fail"; }
+
+ans) if (marks >= 35) {
+  result = "Pass";
+} else {
+  result = "Fail";
+}
+const result = marks >= 35 ? "Pass" : "Fail";
+
+
+c) Write an arrow function greet(name) that prints: "Hello, " If no name is passed, print "Guest" using the ternary operator
+
+ans)const greet = name => `Hello, ${name ? name : "Guest"}`;
+OR
+const greet = name => `Hello, ${name || "Guest"}`;
+
+
