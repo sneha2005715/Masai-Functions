@@ -1,0 +1,9 @@
+const multiply = (a = 1, b = 1) => a * b
+
+How it works:
+a = 1 and b = 1 make sure that if you call multiply() without any arguments, it returns 1.
+Works the same as the original function when arguments are provided.
+
+Example:-
+multiply(3, 4);  // Output: 12
+multiply();      // Output: 1
