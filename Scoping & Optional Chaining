@@ -1,0 +1,66 @@
+a) What is the output? 
+if (true) { let x = 10; var y = 20; } 
+console.log(y); 
+console.log(x); 
+Explain why?
+
+ans)  Example:- if (true) {
+  let x = 10;
+  var y = 20;
+}
+
+console.log(y); // ?
+console.log(x); // ?
+
+Output:- 20
+ReferenceError: x is not defined
+
+Why?
+var is function-scoped, not block-scoped → so y is accessible outside the if block.
+
+let is block-scoped → x is only valid inside the { } block of the if.
+Trying to access it outside gives:
+
+ReferenceError: x is not defined
+
+b) Access the following safely using optional chaining:
+
+const profile = {
+  user: {
+    details: {
+      email: "test@mail.com"
+    }
+  }
+};
+Print:
+
+profile.user.details.email
+profile.user.details.phone (should not throw error)
+
+
+ans) const profile = {
+  user: {
+    details: {
+      email: "test@mail.com"
+    }
+  }
+};
+
+Output:- test@mail.com
+undefined
+
+
+c) Create an example where optional chaining prevents a runtime error when accessing a missing nested property.
+
+ans)const data = {
+  product: {
+    info: null
+  }
+};
+
+console.log(data.product.info.name); 
+
+Output:-undefined
+
+
+
